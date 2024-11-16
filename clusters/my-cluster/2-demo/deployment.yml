@@ -6,7 +6,7 @@ metadata:
     version: 7.2.0
     env: dev
   name: block-buster-deployment
-  namespace: 2-demo
+  namespace: 2-demo 
 spec:
   replicas: 1
   selector:
@@ -19,6 +19,7 @@ spec:
         app: block-buster
         api: downward
         usage: global
+        test: test
         env: dev
         version: 7.2.0
     spec:

@@ -13,5 +13,7 @@ spec:
     name: flux-system
   resources:
     - namespace.yml
-    - deployment.yml
     - service.yml
+    - deployment.yml
+    
+
