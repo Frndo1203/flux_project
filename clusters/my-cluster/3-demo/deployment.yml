@@ -3,10 +3,10 @@ kind: Deployment
 metadata:
   labels:
     app: block-buster
-    version: 7.3.0
+    version: 7.2.0
     env: dev
-  name: block-buster
-  namespace: 3-demo
+  name: block-buster-deployment
+  namespace: 2-demo 
 spec:
   replicas: 1
   selector:
@@ -19,20 +19,21 @@ spec:
         app: block-buster
         api: downward
         usage: global
+        test: test
         env: dev
-        version: 7.3.0
+        version: 7.2.0
     spec:
       containers:
         - name: app
-          image:  siddharth67/block-buster-dev:7.3.0
+          image:  siddharth67/block-buster-dev:7.2.0
           imagePullPolicy: Always
           resources:
             requests:
-              memory: "10Mi"
-              cpu: "10m"
+              memory: "32Mi"
+              cpu: "125m"
             limits:
               memory: "64Mi"
-              cpu: "20m"
+              cpu: "250m"
           env:
             - name: MY_POD_NAME
               valueFrom:
